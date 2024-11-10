@@ -1,0 +1,6 @@
+[
+  {
+    "path": "src/i18n.js",
+    "content": "import i18n from \"i18next\"\nimport { initReactI18next } from \"react-i18next\"\nimport LanguageDetector from \"i18next-browser-languagedetector\"\nimport HttpApi from \"i18next-http-backend\"\n\ni18n\n  .use(HttpApi)\n  .use(LanguageDetector)\n  .use(initReactI18next)\n  .init({\n    fallbackLng: \"en\",\n    debug: true,\n    interpolation: {\n      escapeValue: false,\n    },\n    backend: {\n      loadPath: \"/locales/{{lng}}/{{ns}}.json\",\n    },\n  })\n\nexport default i18n\n"
+  }
+]
